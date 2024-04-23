@@ -4,10 +4,7 @@ const User = require("../model/user");
 
 router.get('/', async (req, res) => {
     try {
-        // Fetch all users from the database
-        const users = await User.find({});
-        // Send the users as a response
-        res.status(200).send(users);
+        res.status(200).json({ message: 'Hello world !' });
     } catch (error) {
         console.error(error);
         res.status(500).send({ message: 'Internal Server Error' });
